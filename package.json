@@ -1,0 +1,25 @@
+{
+  "name": "deploy-to-environment",
+  "version": "0.1.0",
+  "description": "Deploy your application using Github Actions pull request commentary to a environment you desire to",
+  "main": "src/index.js",
+  "repository": "git@github.com:aleDsz/deploy-to-environment.git",
+  "author": "Alexandre de Souza <alexandre@aledsz.com.br>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "lint": "eslint src/**.js",
+    "build": "ncc build src/index.js -o dist",
+    "test": "yarn lint && yarn run:test",
+    "run:test": "jest --coverage --verbose"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/exec": "^1.0.4"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.26.0",
+    "jest": "^26.6.3"
+  }
+}
