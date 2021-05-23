@@ -1,4 +1,4 @@
-import Github from '~/services/github'
+//import Github from '~/services/github'
 import core from '@actions/core'
 
 // const github = new Github('api_url', 'token')
