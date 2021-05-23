@@ -10,10 +10,14 @@
   "scripts": {
     "lint": "eslint src/** test/** --max-warnings=0",
     "build": "ncc build src/index.js -o dist",
-    "test": "yarn lint && jest"
+    "test": "jest"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ]
   },
   "dependencies": {
     "@actions/core": "^1.2.7",
