@@ -7,6 +7,7 @@ const new_api = (api_url, token) => {
   })
   
   api.interceptors.request.use(async config => {
+    config.headers.Accept = 'application/vnd.github.v3+json'
     config.headers.Authorization = `token ${token}`
     return config
   })
