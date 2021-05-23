@@ -1,0 +1,8 @@
+name: 'Promote deploy to environment'
+description: 'Promote a deploy action from github pull request commands'
+branding:
+  icon: 'upload-cloud'
+  color: 'gray-dark'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
