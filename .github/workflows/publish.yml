@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - main
+
+name: Publish package
+
+jobs:
+  check:
+    name: Package distribution file
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Download dependencies
+      run: yarn
+
+    - name: Build package
+      run: yarn build
+
+    - name: Distribute package
+      run: |
+        git config --global user.name "GitHub Actions"
+        git add dist/
+        git commit -m "chore: Update dist" || echo "No changes to commit"
+        git push origin HEAD:main

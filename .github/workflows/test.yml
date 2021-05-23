@@ -1,0 +1,21 @@
+on:
+  [pull_request]
+
+name: Check
+
+jobs:
+  check:
+    name: Validate changes
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Download dependencies
+      run: yarn
+
+    - name: Analyze code
+      run: yarn lint
+
+    - name: Run tests
+      run: yarn test
