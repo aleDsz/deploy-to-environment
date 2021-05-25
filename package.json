@@ -2,14 +2,14 @@
   "name": "deploy-to-environment",
   "version": "0.1.0",
   "description": "Deploy your application using Github Actions pull request commentary to a environment you desire to",
-  "main": "src/index.js",
+  "main": "index.js",
   "repository": "git@github.com:aleDsz/deploy-to-environment.git",
   "author": "Alexandre de Souza <alexandre@aledsz.com.br>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "lint": "eslint src/** test/** --max-warnings=0",
-    "build": "ncc build src/index.js -o dist",
+    "lint": "eslint index.js --max-warnings=0",
+    "build": "ncc build index.js -o dist",
     "test": "jest"
   },
   "jest": {
@@ -26,13 +26,7 @@
     "axios": "^0.21.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.14.2",
     "@zeit/ncc": "^0.22.3",
-    "babel-jest": "^26.6.3",
-    "babel-plugin-root-import": "^6.6.0",
-    "babel-polyfill": "^6.26.0",
-    "eslint": "^7.26.0",
-    "eslint-plugin-jest": "^24.3.6",
-    "jest": "^26.6.3"
+    "eslint": "^7.26.0"
   }
 }
